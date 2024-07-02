@@ -42,7 +42,7 @@ const Navbar = ({ addcart, count, QuntityHandler, handleDelete }) => {
           <div className="side-nav-links">
             <ul>
               <li>Home</li>
-              <li>Aobut</li>
+              <li>About</li>
               <li>Shop</li>
               <li>Contact</li>
             </ul>
