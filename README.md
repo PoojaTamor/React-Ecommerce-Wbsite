@@ -21,6 +21,7 @@ The project is an e-commerce platform developed using React. It includes feature
 - **Bootstrap**: For responsive design and pre-built components.
 - **React Hot Toast**: For notifications.
 - **BrowserRouter**: For client-side routing.
+- **Tippy.js**:  For tooltips and popovers..
 
 ## Components
 
@@ -66,7 +67,19 @@ The project is an e-commerce platform developed using React. It includes feature
   - Display product images, name, price, and detailed description.
   - Buttons to adjust the quantity and add the product to the cart.
 
-### 6. App Component
+
+### 6.SearchResults Component
+- **Description**: The SearchResults component displays the search results based on the search query.
+- **Props**:
+-`items`: Array of filtered items based on the search query.
+-`handleAddToCart`: Function to add items to the cart.
+-`ProductShow`: Function to display product details.
+- **Key Features**:
+-Display filtered products with images, names, prices, and rating stars.
+-Message and button to search again if no results are found.
+
+
+### 7. App Component
 - **Description**: The App component is the main entry point of the application. It manages the state and routing of the application.
 - **Key Features**:
   - Maintains the state for cart items and added items.
@@ -93,7 +106,10 @@ The project is an e-commerce platform developed using React. It includes feature
 
 ### Notifications
 - **React Hot Toast**: Provides feedback to users when they try to add duplicate items to the cart.
-
+### Tooltips
+-**Tippy**.js: Used for displaying tooltips and popovers.
+-**Import**: import Tippy from '@tippyjs/react';
+-**CSS**: import 'tippy.js/dist/tippy.css';
 ## State Variables
 
 ### `addcart` and `setAddCart`
@@ -110,6 +126,16 @@ The project is an e-commerce platform developed using React. It includes feature
 - **Purpose**: This state holds the details of a selected product to display on the product detail page.
 - **Initialization**: It is initialized as an empty array.
 - **Usage**: The `setproDetail` function updates this state with the details of the selected product.
+
+### `searchQuery` and `setSearchQuery`
+-**Purpose**: This state holds the current value of the search input field.
+-**Initialization**: It is initialized as an empty string.
+-**Usage**: The `setSearchQuery` function updates this state as the user types in the search bar.
+
+### `filteredItems` and `setFilteredItems`
+-**Purpose**: This state holds the list of products that match the search input.
+-**Initialization**: It is initialized as an empty array.
+-**Usage**: The setFilteredItems function updates this state with the filtered products based on the search input.  
 
 ## Functions
 
@@ -138,14 +164,19 @@ The project is an e-commerce platform developed using React. It includes feature
 - **Purpose**: Removes an item from the cart based on its index.
 - **Parameters**: `index` (the index of the item to be removed).
 - **Implementation**:
-  - Creates a copy of the `addcart` state.
-  - Removes the item at the given index using `splice`.
-  - Updates the `addcart` state with the new list.
+ - Creates a copy of the `addcart` state.
+ - Removes the item at the given index using `splice`.
+ - Updates the `addcart` state with the new list.
 
 ### `ProductShow`
 - **Purpose**: Displays the details of a selected product.
 - **Parameters**: `item` (the item whose details are to be displayed).
 - **Implementation**: Updates the `ProDetail` state with the details of the selected product.
+
+### `handleSearchChange`
+-**Purpose**: Filters the product list based on the search input.
+-**Parameters**: event (the input change event).
+-**Implementation**:Updates the searchQuery state with the current value of the input field.
 
 ## Rendering and Routing
 The `App` component uses `BrowserRouter` to handle client-side routing. Inside the `BrowserRouter` component, different routes are defined using the `Routes` and `Route` components:
