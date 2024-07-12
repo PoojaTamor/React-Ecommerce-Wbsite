@@ -128,14 +128,14 @@ The project is an e-commerce platform developed using React. It includes feature
 - **Usage**: The `setproDetail` function updates this state with the details of the selected product.
 
 ### `searchQuery` and `setSearchQuery`
--**Purpose**: This state holds the current value of the search input field.
--**Initialization**: It is initialized as an empty string.
+- **Purpose**: This state holds the current value of the search input field.
+- **Initialization**: It is initialized as an empty string.
 -**Usage**: The `setSearchQuery` function updates this state as the user types in the search bar.
 
 ### `filteredItems` and `setFilteredItems`
--**Purpose**: This state holds the list of products that match the search input.
--**Initialization**: It is initialized as an empty array.
--**Usage**: The setFilteredItems function updates this state with the filtered products based on the search input.  
+- **Purpose**: This state holds the list of products that match the search input.
+- **Initialization**: It is initialized as an empty array.
+- **Usage**: The setFilteredItems function updates this state with the filtered products based on the search input.  
 
 ## Functions
 
